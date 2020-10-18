@@ -2,7 +2,7 @@
 //Nuestro código se ejecuta y se convierte a código máquina, se imprime el "hola mundo", y cada segundo el event loop 
 //disparará un evento que es imprimir el "cada segundo me ejecuto" 
 
-console.log('primera instruccion');
+console.log('Primera instruccion');
 
 setInterval( () => {
     console.log('cada segundo me ejecuto wuuu');
