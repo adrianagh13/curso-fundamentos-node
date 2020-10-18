@@ -4,6 +4,8 @@ let web = process.env.WEB || 'no hay web';//Las variables de entorno que vienen 
 console.log('Hola' + nombre);
 console.log('Mi sitio web es: ' + web);
 
+console.log('nodemon');
+
 //VARIABLES DE ENTORNO: Son una forma que tenemos de llamar información de afuera de nuestro software,
 // process: nos da información sobre el proceso que está ejecutando este script
 // env: nos da acceso a las variables de entorno
