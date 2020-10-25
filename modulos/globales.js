@@ -1,10 +1,10 @@
-console.log(global)
+setImmediate(() => {
+    console.log('Hola');
+})
 
-let i = 0;
-const intervalo = setInterval(() => {
-    i++;
-    if (i === 3){
-        clearInterval(intervalo) //la función clearInterval recibe una función tipo setInterval para romper su intervalo
-    }
-    console.log('Hola'); 
-}, 1000);
+//Esta función es equivalente a setTimeout pero en tiempo 0
+
+// console.log(process); //retorna toda la información de los procesos en ejecución
+
+console.log(__dirname); //retorna la dirección en la que está nuestro archivo
+console.log(__filename); //retorna la dirección de nuestro archivo incluyendo el filename
