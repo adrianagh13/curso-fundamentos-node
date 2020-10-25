@@ -1,9 +1,14 @@
 const fs = require('fs');
 
-const leer = (ruta, cb) => {
-    fs.readFile(ruta, (err, data) => {
-        cb(data.toString());
+const escribir = (ruta, contenido, cb) => {
+    fs.writeFile(ruta, contenido, (err, data) => {
+        if(err){
+            console.error('No se ha podido escribir en el archivo')
+        }
+        else {
+            console.log('Se escribió correctamente');
+        }
     })
 }
 
-leer(__dirname + '/archivo.txt', console.log);
+escribir(__dirname + '/archivo.txt', 'Hemos escrito en el file',  console.log);
