@@ -1,15 +1,24 @@
-const soyAsync = miCallback => {
-    console.log('Hola, soy una función asíncrona');
+const hola = (nombre, miCallback) => {
     setTimeout(() => {
-        console.log('Estoy siendo asíncrona');
-        miCallback()
+        console.log('Hola' , nombre);
+        miCallback(nombre)
+    }, 1500)
+}
+
+const adios = (nombre, otroCallback) => {
+    setTimeout(() => {
+        console.log('Adios', nombre);
+        otroCallback();
     }, 1000)
 }
 
 console.log('Iniciando proceso');
-soyAsync(() => {
-    console.log('Terminando proceso');
-});
+
+hola('Adri', (nombre) => {
+    adios(nombre, () => {
+        console.log('Terminando proceso');
+    })
+})
 
 //Asincronia con callbacks
 //Se llama al log de inicio, posterior el 'hola, soy una funcion asincrona, y como lo indica el setTimeout
