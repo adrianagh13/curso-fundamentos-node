@@ -1,10 +1,7 @@
-setImmediate(() => {
-    console.log('Hola');
-})
+//VARIABLES GLOBALES
+//En ciertos casos puede ser muy útil crear variables globales
+//Sin embargo, es recomendable evitar su uso porque pueden generar problemas
+//En lugar podemos importar módulos o archivos de configuración
 
-//Esta función es equivalente a setTimeout pero en tiempo 0
-
-// console.log(process); //retorna toda la información de los procesos en ejecución
-
-console.log(__dirname); //retorna la dirección en la que está nuestro archivo
-console.log(__filename); //retorna la dirección de nuestro archivo incluyendo el filename
+global.miVariable = 'Variable Global'
+console.log(miVariable);
