@@ -1,14 +1,17 @@
 const fs = require('fs');
 
-const escribir = (ruta, contenido, cb) => {
-    fs.writeFile(ruta, contenido, (err, data) => {
+//borrar un file
+//Llamamos a la función unlink, la cual se encarga de hacer unlink al nodo creado de este archivo
+
+const borrar = (ruta, cb) => {
+    fs.unlink(ruta, (err, data) => {
         if(err){
-            console.error('No se ha podido escribir en el archivo')
+            console.log('No se ha podido eliminar el file');
         }
         else {
-            console.log('Se escribió correctamente');
+            console.log('Borrado correctamente');
         }
-    })
+    });
 }
 
-escribir(__dirname + '/archivo.txt', 'Hemos escrito en el file',  console.log);
+// borrar(__dirname + 'archivo1.txt', console.log)
