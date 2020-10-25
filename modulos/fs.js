@@ -14,4 +14,4 @@ const borrar = (ruta, cb) => {
     });
 }
 
-// borrar(__dirname + 'archivo1.txt', console.log)
+borrar(__dirname + '/archivo1.txt', console.log)
