@@ -11,7 +11,8 @@ const hablar = (nombre) => {
     return new Promise((resolve, reject) => {
         setTimeout(() => {
             console.log('bla bla bla bla');
-            resolve(nombre);
+            // resolve(nombre);
+            reject('Ocurrió un error')
         }, 1000)
     })
 }
@@ -34,6 +35,13 @@ hola('Adri')
     .then(nombre => {
         console.log('Terminamos proceso');
     })
+    .catch(error => { //Utilizamos control de excepciones para que pare directamente la ejecución del código
+        console.error('Error manejado con catch');
+        console.error(error)
+    })
 
 //VENTAJAS DE LAS PROMESAS
 //Podemos ir anidándolas
+
+//CONTROL DE EXCEPCIONES
+//Siempre que pongamos un then, debe de haber un catch
