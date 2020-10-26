@@ -1,6 +1,6 @@
 const { exec } = require('child_process');
 
-exec('dir', (err, stdout, sterr) => {
+exec('node modulos/consola.js ', (err, stdout, sterr) => {
     if (err) {
         console.error(err);
         return false;
@@ -8,4 +8,5 @@ exec('dir', (err, stdout, sterr) => {
     console.log(stdout);
 })
 
-//Ejemplo sencillo de un child process en el cual listamos los directorios con dir
+//Ejemplo en que un proceso hijo ejecuta un proceso de node por debajo
+//Con exec podemos ejecutar procesos sencillos por debajo del proceso hijo
