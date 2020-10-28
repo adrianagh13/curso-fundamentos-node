@@ -2,19 +2,23 @@ const http = require('http');
 
 //PETICION : CLIENTE-SERVIDOR/REQUEST-RESPONSE
 
-http.createServer((req, res) => {
+const router = (req, res) => {
     console.log('Nueva peticion');
     console.log(req.url);
 
-    //Escribir una cabecera(se pueden visulizar en consola)
-    res.writeHead(201, { 'Content-Type': 'text/plain' }) //método de cabecera, código de edo, y cabecera
+    switch(req.url){
+        case'/hola':
+            res.write('Hola, que tal');
+            res.end();
+            break;
 
-    //Escribir respuesta al usuario
-    res.write('hola, ya se usar http de node')
+        default:
+            res.write('Error 404: No se lo que quieres');
+            res.end();
+            break;
+    }
+}
 
-    res.end();//terminar la peticion
-}).listen(3002) //el servidor escucha al puerto 3002
+http.createServer(router).listen(3002) //separé la función que maneja el req y res
 
 console.log('Escuchando al puerto 3002');
-
-//Puedes visualizar las cabeceras en el inspector-Network-Código de estado
