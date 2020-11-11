@@ -8,7 +8,8 @@ const router = (req, res) => {
 
     switch(req.url){
         case'/hola':
-            res.write('Hola, que tal');
+        let saludo = hola();
+            res.write(saludo);
             res.end();
             break;
 
@@ -22,3 +23,7 @@ const router = (req, res) => {
 http.createServer(router).listen(3002) //separé la función que maneja el req y res
 
 console.log('Escuchando al puerto 3002');
+
+function hola() {
+    return 'hola que tal';
+}
